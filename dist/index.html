@@ -1,0 +1,75 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leptos Test</title>
+  
+<link rel="preload" href="/leptos_test-f16d1c274713a515_bg.wasm" as="fetch" type="application/wasm" crossorigin="">
+<link rel="modulepreload" href="/leptos_test-f16d1c274713a515.js"></head>
+  <body>
+    <style>
+      html,
+      body {
+        /* height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center; */
+        margin: 0;
+        padding: 0;
+      }
+      .background {
+        background-color: antiquewhite;
+        min-height: 100vh; /* Ensure the div takes up the full viewport height */
+        display: flex;
+        flex-direction: column;
+      }
+
+      .content-div {
+        outline: 5px solid red;
+        text-align: center;
+		min-height: 9%;
+      }
+      .title {
+        color: blue;
+        text-align: center;
+      }
+	  .button{
+		  background-color: #4CAF50; /* Green */
+		  /* border: none;
+		  color: white;
+		  padding: 65px 32px;
+		  text-align: center;
+		  text-decoration: none;
+		  display: inline-block;
+		  font-size: 16px; */
+	  }
+    </style>
+  
+
+<script type="module">import init from '/leptos_test-f16d1c274713a515.js';init('/leptos_test-f16d1c274713a515_bg.wasm');</script><script>(function () {
+    var protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+    var url = protocol + '//' + window.location.host + '/_trunk/ws';
+    var poll_interval = 5000;
+    var reload_upon_connect = () => {
+        window.setTimeout(
+            () => {
+                // when we successfully reconnect, we'll force a
+                // reload (since we presumably lost connection to
+                // trunk due to it being killed, so it will have
+                // rebuilt on restart)
+                var ws = new WebSocket(url);
+                ws.onopen = () => window.location.reload();
+                ws.onclose = reload_upon_connect;
+            },
+            poll_interval);
+    };
+
+    var ws = new WebSocket(url);
+    ws.onmessage = (ev) => {
+        const msg = JSON.parse(ev.data);
+        if (msg.reload) {
+            window.location.reload();
+        }
+    };
+    ws.onclose = reload_upon_connect;
+})()
+</script></body></html>
