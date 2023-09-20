@@ -3,49 +3,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leptos Test</title>
   
-<link rel="preload" href="/leptos_test-f16d1c274713a515_bg.wasm" as="fetch" type="application/wasm" crossorigin="">
-<link rel="modulepreload" href="/leptos_test-f16d1c274713a515.js"></head>
+<link rel="preload" href="/leptos_test-b59ed4c4380780f5_bg.wasm" as="fetch" type="application/wasm" crossorigin="">
+<link rel="modulepreload" href="/leptos_test-b59ed4c4380780f5.js"></head>
   <body>
     <style>
       html,
       body {
-        /* height: 100%;
-        margin: 0;
-        display: flex;
-        justify-content: center; */
         margin: 0;
         padding: 0;
-      }
-      .background {
-        background-color: antiquewhite;
-        min-height: 100vh; /* Ensure the div takes up the full viewport height */
-        display: flex;
-        flex-direction: column;
+        font-family: Arial, sans-serif; /* Set your preferred font family */
       }
 
+      /* Style the background */
+      .background {
+        background-color: #f0f0f0; /* Light gray background */
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Style the content div */
       .content-div {
-        outline: 5px solid red;
         text-align: center;
-		min-height: 9%;
+        padding: 20px;
       }
+
+      /* Style the title */
       .title {
-        color: blue;
-        text-align: center;
+        color: #333; /* Dark gray title color */
+        font-size: 28px; /* Larger font size */
+        margin-bottom: 20px; /* Add spacing below the title */
       }
-	  .button{
-		  background-color: #4CAF50; /* Green */
-		  /* border: none;
-		  color: white;
-		  padding: 65px 32px;
-		  text-align: center;
-		  text-decoration: none;
-		  display: inline-block;
-		  font-size: 16px; */
-	  }
+
+      /* Create a row for buttons and outputs */
+      .row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* Style the buttons */
+      .button {
+        background-color: #99a199; /* Green */
+        color: white;
+        padding: 15px 30px;
+        margin: 5px;
+        cursor: pointer;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        font-size: 30px; /* Button font size */
+        font-weight: bold; /* Button font weight */
+        text-transform: uppercase; /* Uppercase text */
+        transition: background-color 0.3s ease; /* Smooth background color transition */
+      }
+
+      /* Change button color on hover */
+      .button:hover {
+        background-color: #2e302e; /* Slightly darker green on hover */
+      }
+
+      /* Style the output */
+      .output {
+        font-size: 100px; /* Larger font size for the output */
+        margin: 10px 60px;
+        color: #333; /* Dark gray text color */
+      }
+
+      /* Apply specific styles to the plus and minus buttons using IDs */
+      #plus_one_button {
+        /* Add any specific styles for the plus button */
+      }
+
+      #minus_one_button {
+        /* Add any specific styles for the minus button */
+      }
     </style>
   
 
-<script type="module">import init from '/leptos_test-f16d1c274713a515.js';init('/leptos_test-f16d1c274713a515_bg.wasm');</script><script>(function () {
+<script type="module">import init from '/leptos_test-b59ed4c4380780f5.js';init('/leptos_test-b59ed4c4380780f5_bg.wasm');</script><script>(function () {
     var protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
     var url = protocol + '//' + window.location.host + '/_trunk/ws';
     var poll_interval = 5000;
